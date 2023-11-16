@@ -103,6 +103,8 @@ public partial class SizedPage : ContentPage
         Debug.WriteLine("Stop recording result " + result);
 #if IOS
         player.Source = MediaSource.FromFile(Path.Combine(FileSystem.Current.CacheDirectory, "Video.mov"));
+        FileInfo fi = new FileInfo(Path.Combine(FileSystem.Current.CacheDirectory, "Video.mov"));
+        Debug.WriteLine("Video size: " + fi.Length);
 #else
         player.Source = MediaSource.FromFile(Path.Combine(FileSystem.Current.CacheDirectory, "Video.mp4"));
 #endif
